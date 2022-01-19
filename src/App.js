@@ -18,8 +18,9 @@ class App extends React.Component {
 
   // Добавляет контакт 
     addContact = newContact => {
+      const {state} = this.state
     // Проверка на дубликат
-    const duplicateName = this.state.contacts.find(
+    const duplicateName = {state}.contacts.find(
       contact => contact.name === newContact.name,
     );
 
