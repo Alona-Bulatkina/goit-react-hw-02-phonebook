@@ -27,11 +27,12 @@ class ContactForm extends React.Component {
   // Метод на отправке формы. Формирует из стейта контакт и передает во внешний метод
   hanldeSubmit = event => {
     event.preventDefault();
-
+    const { name, number } = this.state;
+    
     const contact = {
       id: uuidv4(),
-      name: this.state.name,
-      number: this.state.number,
+      name: name,
+      number: number,
     };
 
     this.props.onSubmit(contact); // Внешний метод в пропсах класса
