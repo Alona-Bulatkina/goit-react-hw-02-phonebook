@@ -48,7 +48,13 @@ class ContactForm extends React.Component {
       number: '',
     });
   };
-
+  // Проверка на дубли
+  filterContacts = () => {
+    return this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(this.state.filter.toLowerCase()),
+    );
+  };
+  
   render() {
     return (
       <Form onSubmit={this.hanldeSubmit}>
